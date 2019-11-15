@@ -52,7 +52,7 @@ public class DemoResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getInfoForAll() {
-        return "{\"msg\":\"Hello anonymous\"}";
+        return "{\"message\":\"Hello anonymous\"}";
     }
 
     //Just to verify if the database is setup
@@ -76,7 +76,7 @@ public class DemoResource {
     @RolesAllowed("user")
     public String getFromUser() {
         String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Hello to User: " + thisuser + "\"}";
+        return "{\"message\": \"Hello to User: " + thisuser + "\"}";
     }
 
     @GET
@@ -85,7 +85,7 @@ public class DemoResource {
     @RolesAllowed("admin")
     public String getFromAdmin() {
         String thisuser = securityContext.getUserPrincipal().getName();
-        return "{\"msg\": \"Hello to (admin) User: " + thisuser + "\"}";
+        return "{\"message\": \"Hello to (admin) User: " + thisuser + "\"}";
     }
     
     
